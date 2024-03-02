@@ -505,8 +505,8 @@ public class HbmWorldGen implements IWorldGenerator {
 				
 				boolean done = false;
 				
-				for(int k = 0; k < 256; k++) {
-					if(world.getBlock(x, k, z) == Blocks.log && world.getBlockMetadata(x, k, z) == 0) {
+				for(int k = 0; k < 255; k++) {
+					if(world.getBlock(x, k, z) == Blocks.log && world.getBlockMetadata(x, k, z) == 0 && world.getBlock(x,k+1,z)!=Blocks.air) {
 						world.setBlock(x, k, z, ModBlocks.pink_log);
 						done = true;
 					}
@@ -796,8 +796,8 @@ public class HbmWorldGen implements IWorldGenerator {
 			int d = 16 + rand.nextInt(96);
 
 			for(int y = d - 5; y <= d; y++)
-			if(world.getBlock(x, y + 1, z) == Blocks.air && world.getBlock(x, y, z) == Blocks.netherrack)
-				world.setBlock(x, y, z, ModBlocks.geysir_nether);
+				if(world.getBlock(x, y + 1, z) == Blocks.air && world.getBlock(x, y, z) == Blocks.netherrack)
+					world.setBlock(x, y, z, ModBlocks.geysir_nether);
 		}
 	}
 
