@@ -786,8 +786,9 @@ public class HbmWorldGen implements IWorldGenerator {
 			int d = 16 + rand.nextInt(96);
 
 			for(int y = d - 5; y <= d; y++)
-				if(world.getBlock(x, y + 1, z) == Blocks.air && world.getBlock(x, y, z) == Blocks.netherrack)
-					world.setBlock(x, y, z, ModBlocks.ore_nether_smoldering);
+				if(world.getBlock(x, y + 1, z) == Blocks.air && world.getBlock(x, y, z) == Blocks.netherrack) {
+                    world.setBlock(x, y, z, ModBlocks.ore_nether_smoldering);
+                }
 		}
 
 		for(int k = 0; k < 1; k++){
